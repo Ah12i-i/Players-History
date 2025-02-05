@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Mitr:wght@200;300;400;500;600;700&family=PT+Sans+Narrow:wght@400;700&family=Pontano+Sans:wght@300..700&family=Sawarabi+Gothic&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "PT Sans Narrow", serif;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center; /* محاذاة العناصر أفقياً */
+    align-items: center; /* محاذاة العناصر عمودياً */
+    background-color: #ffffff6c;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* منع تجاوز المحتوى من اليمين */
+}
+
+.header-background {
+    background-color: #ba1546;
+    background-image: url('https://media.npr.org/assets/img/2022/12/30/ap22364795346345-153c53713ce57b880428deae9fef9b9926961b6b.jpg');
+    background-size: cover;
+    background-position: center; /* التحكم بالموضع */
+    height: 100vh;
+    z-index: 0;
+}
+
+.header-background::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+@media (max-width: 1100px) {
+    .header-background {
+        max-width: 100%;
+        background-color: lightgray;
+    }
+}
+
+.navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 15px 3%;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* محاذاة الروابط إلى الجهة اليمنى */
+    align-items: center;
+}
+
+.navbar-container img {
+    width: 100px;
+    margin-left: 50px;
+    height: auto;
+}
+
+.navbar-container li {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.navbar-container li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+    margin-right: 50px;
+    transition: all 0.5s ease;
+    padding: 7px 20px;
+    border-radius: 15px;
+}
+
+.navbar-container li a:hover {
+    background-color: #ba1546;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  padding: 3px 25px;
+  max-width: 250px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 3px solid;
+  transition: 0.5s ease;
+}
+
+.search-container:hover {
+  border-color: rgb(0, 0, 0);
+  background-color: #fff;
+  box-shadow: 0 0 0 7px #ba1546;
+}
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.search-container svg {
+  width: 20px;
+  height: auto;
+  margin-right: 8px;
+  stroke: #9e9ea7;
+  transition: 0.3s ease;
+}
+
+.search-container:hover svg {
+  stroke: rgb(0, 0, 0);;
+}
+
+  
+.hero-text {
+    text-align: left;
+    color: #ffffff;
+    margin-left: 110px;
+    margin-top: 150px;
+    text-shadow: 2px 2px 6px rgb(0,0,0);
+    position: absolute;
+}
+
+.hero .hero-text h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    transition: transform 0.6s ease;
+}
+
+.hero-text h1:hover {
+    transform: scale(1.1);
+}
+
+.hero-text p {
+    color: #ba1546;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.table-personal-img {
+    padding: 25px 20px;
+    margin: 50px auto; /* Changed to auto for better centering */
+    max-width: 1200px; /* Added max-width to contain the element */
+    display: flex;
+    flex-wrap: wrap; /* Added flex-wrap for better responsiveness */
+    gap: 2rem; /* Added gap for spacing between elements */
+}
+
+.personal-img-container {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+    display: flex;
+    justify-content: center;
+}
+
+.personal-img-container img {
+    background-color: #000000;
+    border: 5px solid #ba1546;
+    border-radius: 30px;
+    padding: 5px;
+    width: 100%;
+    max-width: 350px; /* Maximum width of the image */
+    height: auto;
+}
+
+.table-content {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: rgba(255, 255, 255, 0.226);
+    color: #000000;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+caption {
+    background: hsl(0 0% 0%);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    color: #f4f4f4;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+caption, th, td {
+    padding: 0.8rem;
+}
+
+.first-line {
+    color: #ffffff;
+    background-color: #ba1546;
+    font-weight: bold;
+}
+
+tr:nth-of-type(2n) {
+    background: hsl(0, 0%, 85%);
+}
+
+td[data-cell="Information"],
+th[data-cell="Information"] {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1120px) {
+    .table-personal-img {
+        padding: 15px;
+        margin: 25px auto;
+    }
+    
+    .personal-img-container {
+        margin: 25px 0;
+    }
+    
+    .table-content {
+        margin: 0;
+        width: 100%;
+    }
+    
+    caption {
+        font-size: 1.5rem;
+    }
+}
+
+caption,th,td {
+    padding: 0.2rem;
+}
+
+caption {
+    background: hsl(0 0% 0%);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    color: #f4f4f4;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.first-line{
+    color: #ffffff;
+    background-color:#ba1546;
+    font-weight: bold; /* جعل النص عريضًا */
+}
+
+tr:nth-of-type(2n)
+{
+    background: hsl(0, 0%, 85%);
+    border-bottom-left-radius: 10px;
+}
+
+td[data-cell="Information"], th[data-cell="Information"] {
+    color: #000000; 
+    font-weight: bold; 
+}
+
+.numbers {
+    color: #000000;
+    text-align: center;
+    background-color: #d8d8d8;
+    margin: 50px 20px;
+    padding: 30px 20px;
+    box-shadow: 0px 15px 1px rgba(0, 0, 0);
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.numbers-title {
+    margin: 25px;
+    font-size: 40px;
+    text-shadow: 2px 2px 10px rgba(107, 13, 13, 0.2);
+    transition: text-shadow 0.6s ease;
+}
+
+.numbers-title:hover {
+    text-shadow: 2px 2px 40px rgba(255, 0, 0);
+}
+
+.numbers-content {
+    border: 100px #961a1a;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 10px rgba(107, 13, 13, 0.2);
+    object-fit: cover;
+}
+
+.numbers-content p {
+    font-size: 1.8rem;
+}
+
+.games {
+    transition: text-shadow 0.6s ease;
+}
+
+.games:hover {
+    text-shadow: 2px 2px 40px rgba(255, 0, 0);
+}
+
+.goals {
+    transition: text-shadow 0.6s ease;
+}
+
+.goals:hover {
+    text-shadow: 2px 2px 40px rgba(255, 0, 0);
+}
+
+.assists {
+    transition: text-shadow 0.6s ease;
+}
+
+.assists:hover {
+    text-shadow: 2px 2px 40px rgba(255, 0, 0);
+}
+
+h2 {
+    margin-bottom: 10px; 
+    text-transform: uppercase;
+}
+
+/* Base styles */
+.layered-content {
+    margin-top: 200px;
+    width: 100%;
+}
+
+.layered-content .content {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+}
+
+.layered-content .content h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.layered-content .content p {
+    font-size: clamp(1rem, 3vw, 1.8rem);
+    margin-bottom: 1rem;
+}
+
+.layered-content .content li {
+    font-size: clamp(0.875rem, 2vw, 1.2rem);
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+/* Image styles */
+.layered-content img {
+    max-width: 70%;
+    height: auto;
+    margin-left: 15%;
+    justify-content: center;
+    border-radius: 2rem;
+    transition: transform 0.5s ease;
+}
+
+.layered-content img {
+    box-shadow: -15px 15px 1px rgba(186, 21, 70, 0.9);
+}
+
+.layered-content img:hover {
+    transform: scale(1.05);
+}
+
+/* Section styles */
+.man-united,
+.real-madrid,
+.juventus,
+.man-united2,
+.al-nassr,
+.portugal {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .man-united,
+    .real-madrid,
+    .juventus,
+    .man-united2,
+    .al-nassr,
+    .portugal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 2rem;
+    }
+}
+
+/* Dark sections */
+.man-united,
+.juventus,
+.al-nassr {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.man-united .achievements,
+.juventus .achievements,
+.al-nassr .achievements {
+    color: #929292;
+}
+
+/* Light sections */
+.real-madrid,
+.man-united2,
+.portugal {
+    color: #000000;
+}
+
+.real-madrid .achievements,
+.man-united2 .achievements,
+.portugal .achievements {
+    color: #3e3e3e;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer .contianer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.footer .content1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .footer .content1 {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer .content1 a {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-weight: bold;
+    text-decoration: none;
+    color: #ababab;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .content1 a:hover {
+    transform: translateX(1rem);
+    color: #fff;
+}
+
+.footer .content2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    background-color: #ba1546;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.footer .content2 img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    background-color: #000000;
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer .content2 img:hover {
+    box-shadow: 0 10px 1px rgb(255, 255, 255);
+    transform: translateY(-0.5rem);
+}
+
+.footer hr {
+    border: none;
+    height: 1px;
+    background-color: #1f1f1f;
+    margin: 2rem 0;
+}
+
+.footer .content3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer .content3 {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer .content3 img {
+    height: auto;
+    max-width: 100px;
+}
