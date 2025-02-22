@@ -8,53 +8,46 @@
 
 body {
     font-family: "PT Sans Narrow", serif;
-    font-weight: 400;
-    font-style: normal;
-    justify-content: center; /* محاذاة العناصر أفقياً */
-    align-items: center; /* محاذاة العناصر عمودياً */
     background-color: #ffffff6c;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden; /* منع تجاوز المحتوى من اليمين */
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
 }
 
 .header-background {
     background-color: #ba1546;
-    background-image: url('https://media.npr.org/assets/img/2022/12/30/ap22364795346345-153c53713ce57b880428deae9fef9b9926961b6b.jpg');
+    background-image: url('cristiano-background.svg');
     background-size: cover;
-    background-position: center; /* التحكم بالموضع */
+    background-position: center;
     height: 100vh;
-    z-index: 0;
 }
 
 .header-background::before {
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.55);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9));
     z-index: 0;
-}
-
-@media (max-width: 1100px) {
-    .header-background {
-        max-width: 100%;
-        background-color: lightgray;
-    }
 }
 
 .navbar {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 1;
-    padding: 15px 3%;
+    max-width: 1900px;
+    margin: auto;
+    padding: 15px 5%;
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between; /* محاذاة الروابط إلى الجهة اليمنى */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -65,43 +58,39 @@ body {
 }
 
 .navbar-container li {
-    list-style: none;
     display: inline-block;
-    text-decoration: none;
 }
 
 .navbar-container li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-right: 50px;
-    transition: all 0.5s ease;
-    padding: 7px 20px;
+    padding: 8px 20px;
     border-radius: 15px;
+    transition: all 0.5s ease;
 }
 
 .navbar-container li a:hover {
     background-color: #ba1546;
     color: #ffffff;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .search-container {
   display: flex;
   align-items: center;
   margin-right: 50px;
-  padding: 3px 25px;
+  padding: 4px 25px;
   max-width: 250px;
   background-color: #ffffff;
   border-radius: 10px;
   border: 3px solid;
-  transition: 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .search-container:hover {
-  border-color: rgb(0, 0, 0);
-  background-color: #fff;
   box-shadow: 0 0 0 7px #ba1546;
 }
 
@@ -110,85 +99,82 @@ body {
   outline: none;
   width: 100%;
   height: 24px;
-  line-height: 28px;
   color: #000000;
 }
 
-.input::placeholder {
-  color: #9e9ea7;
+.input.input::placeholder{
+    color: #9e9ea7;
 }
 
 .search-container svg {
   width: 20px;
   height: auto;
-  margin-right: 8px;
+  margin-right: 10px;
   stroke: #9e9ea7;
-  transition: 0.3s ease;
+  transition: 0.5s ease;
 }
 
 .search-container:hover svg {
   stroke: rgb(0, 0, 0);;
 }
 
-  
+.hero {
+    position: relative;
+    margin: 45vh auto;
+    width: 100%;
+}
+
 .hero-text {
-    text-align: left;
-    color: #ffffff;
-    margin-left: 110px;
-    margin-top: 150px;
-    text-shadow: 2px 2px 6px rgb(0,0,0);
-    position: absolute;
+    text-align: center;
+    color: rgb(255, 255, 255); 
+    text-shadow: 2px 2px 30px rgb(0, 0, 0);
+    z-index: 0;
 }
 
 .hero .hero-text h1 {
-    font-size: 50px;
+    font-size: 3rem;
     text-transform: uppercase;
     transition: transform 0.6s ease;
 }
 
-.hero-text h1:hover {
-    transform: scale(1.1);
-}
-
-.hero-text p {
-    color: #ba1546;
-    margin-top: 10px;
-    font-size: 30px;
-}
-
 .table-personal-img {
-    padding: 25px 20px;
-    margin: 50px auto; /* Changed to auto for better centering */
-    max-width: 1200px; /* Added max-width to contain the element */
+    justify-content: space-between;
     display: flex;
-    flex-wrap: wrap; /* Added flex-wrap for better responsiveness */
-    gap: 2rem; /* Added gap for spacing between elements */
+    width: 82%;
+    padding: 25px 20px;
+    margin: 100px auto;
+    max-width: 1630px; 
+    flex-wrap: wrap; 
+    gap: 2rem; /* تمت إزالة الشرطة المائلة */
 }
 
-.personal-img-container {
-    flex: 1;
-    min-width: 300px; /* Minimum width before wrapping */
-    display: flex;
-    justify-content: center;
+.table-personal-img .hr {
+    width: 3px;
+    height: auto;
+    background-color: #000000; /* أو أي لون تفضله */
+    margin:0 100px;
+    align-self: stretch;
 }
 
 .personal-img-container img {
+    justify-content: center;
+    align-items: center;
     background-color: #000000;
     border: 5px solid #ba1546;
     border-radius: 30px;
     padding: 5px;
     width: 100%;
-    max-width: 350px; /* Maximum width of the image */
+    max-width: 350px; 
     height: auto;
 }
 
 .table-content {
     flex: 1;
-    min-width: 300px; /* Minimum width before wrapping */
+    min-width: 300px;
     background-color: rgba(255, 255, 255, 0.226);
     color: #000000;
     border-collapse: collapse;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 caption {
@@ -230,6 +216,7 @@ th[data-cell="Information"] {
     
     .personal-img-container {
         margin: 25px 0;
+        justify-content: center;
     }
     
     .table-content {
@@ -274,11 +261,12 @@ td[data-cell="Information"], th[data-cell="Information"] {
 }
 
 .numbers {
-    color: #000000;
+    width: 80%; /* يجعل العنصر يمتد بعرض الصفحة */
+    max-width: 1600px; /* زيادة الحد الأقصى للعرض */
+    margin: 100px auto;
+    padding: 30px 20px;
     text-align: center;
     background-color: #d8d8d8;
-    margin: 50px 20px;
-    padding: 30px 20px;
     box-shadow: 0px 15px 1px rgba(0, 0, 0);
     border-radius: 20px;
     z-index: 2;
@@ -340,8 +328,9 @@ h2 {
 
 /* Base styles */
 .layered-content {
-    margin-top: 200px;
-    width: 100%;
+    width: 80%;
+    max-width: 1600px;
+    margin: 150px auto;
 }
 
 .layered-content .content {
@@ -416,6 +405,7 @@ h2 {
 .juventus,
 .al-nassr {
     background-color: #000000;
+    border-radius: 1.5rem;
     color: #ffffff;
 }
 
@@ -443,20 +433,21 @@ h2 {
     background-color: #000000;
     color: #fff;
     padding: 2rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 .footer .contianer {
-    max-width: 1200px;
+    width: 80%;
+    max-width: 1600px;
     margin: auto;
-    padding: 1rem;
+    padding: 50px 0;
 }
 
 .footer .content1 {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
@@ -473,7 +464,7 @@ h2 {
 }
 
 .footer .content1 a {
-    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
     color: #ababab;
@@ -486,17 +477,16 @@ h2 {
 }
 
 .footer .content2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
+    display: flex;
+    justify-content: space-around;
     background-color: #ba1546;
-    padding: 2rem;
-    border-radius: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
     margin-bottom: 3rem;
 }
 
 .footer .content2 img {
-    width: 100%;
+    width: 90px;
     max-width: 120px;
     height: auto;
     background-color: #000000;
@@ -510,6 +500,17 @@ h2 {
     transform: translateY(-0.5rem);
 }
 
+/* For mobile devices */
+@media (max-width: 767px) {
+    .footer .content2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+}
+
 .footer hr {
     border: none;
     height: 1px;
@@ -519,6 +520,7 @@ h2 {
 
 .footer .content3 {
     display: flex;
+    color: #929292;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -527,7 +529,6 @@ h2 {
 
 @media (min-width: 768px) {
     .footer .content3 {
-        flex-direction: row;
         justify-content: space-between;
     }
 }
